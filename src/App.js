@@ -8,7 +8,8 @@ const App = () => {
   const [forecast, setForecast] = useState(null);
   const [error, setError] = useState("");
 
-  const apiKey = "42ec9eb471700197aa760be4970c6cea"; 
+  const apiKey = process.env.REACT_APP_API_KEY;
+
 
   const handleInputChange = (e) => {
     setLocation(e.target.value);
