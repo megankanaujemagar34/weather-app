@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+/* Reset + Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to top, #a0c4ff, #caffbf);
   min-height: 100vh;
+}
+
+/* App Container */
+.app {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+/* Search form */
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #0077ff;
   color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #005fcc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Error Message */
+p[style*="red"] {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Weather Display */
+h2 {
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #003366;
+}
+
+.app > div > p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Forecast Container */
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+/* Forecast Cards */
+.forecast-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+}
+
+.forecast-card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+/* Highlight day name */
+.forecast-card p:first-child {
+  font-weight: bold;
+  color: #0077ff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  input, button {
+    width: 100%;
+  }
+
+  .forecast-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .forecast {
+    flex-direction: column;
+    align-items: center;
   }
 }
